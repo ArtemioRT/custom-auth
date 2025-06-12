@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from fastapi import FastAPI, Depends, HTTPException, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from sqlalchemy.orm import Session
+from fastapi import Response
 
 from .database import get_db
 from .models import User, OAuthClient, AuthCode
@@ -112,3 +113,8 @@ def discovery():
 @app.get("/", tags=["health"])
 def root():
     return {"status": "ok"}
+
+@app.head("/", include_in_schema=False)
+def health_head():
+    # mismo comportamiento que GET /
+    return Response(status_code=200)

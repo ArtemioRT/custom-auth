@@ -18,7 +18,7 @@ def seed():
     if not db.query(OAuthClient).filter_by(name="DemoClient").first():
         client = OAuthClient(
             name="DemoClient",
-            redirect_uri="http://localhost:3000/callback",
+            redirect_uri="https://custom-auth-dum1.onrender.com/callback",
             secret=secrets.token_urlsafe(32)
         )
         db.add(client)

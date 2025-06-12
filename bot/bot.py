@@ -1,9 +1,9 @@
 import os, httpx, webbrowser, urllib.parse, time, json
 
-AUTH_URL = os.getenv("ISSUER", "http://localhost:8000")
+AUTH_URL = os.getenv("ISSUER", "https://custom-auth-dum1.onrender.com")
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SEC = os.getenv("CLIENT_SECRET")
-REDIRECT_URI = "http://localhost:3000/callback"
+REDIRECT_URI = "https://custom-auth-dum1.onrender.com/callback"
 STATE = "xyz123"
 
 # 1️⃣ Kick off login
