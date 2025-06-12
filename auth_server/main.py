@@ -108,3 +108,7 @@ def discovery():
         "response_types_supported": ["code"],
         "grant_types_supported": ["authorization_code","refresh_token"],
     }
+
+@app.get("/", tags=["health"])
+def root():
+    return {"status": "ok"}
